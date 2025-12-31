@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.gearrentpro.controller.auth.LoginController"
+            style="-fx-background-color: linear-gradient(to bottom right, #1e3c72, #2a5298);">
+    
+    <center>
+        <StackPane>
+            <!-- Background Image -->
+            <ImageView>
+                <Image url="@/images/login-bg.jpg" />
+                <ImageView.fitWidth>1200</ImageView.fitWidth>
+                <ImageView.fitHeight>700</ImageView.fitHeight>
+                <ImageView.opacity>0.2</ImageView.opacity>
+            </ImageView>
+            
+            <!-- Login Card -->
+            <VBox alignment="CENTER" spacing="30" style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 40;">
+                <VBox alignment="CENTER" spacing="20">
+                    <!-- Logo -->
+                    <ImageView>
+                        <Image url="@/images/logo.png" />
+                        <ImageView.fitWidth>80</ImageView.fitWidth>
+                        <ImageView.fitHeight>80</ImageView.fitHeight>
+                    </ImageView>
+                    
+                    <!-- Title -->
+                    <VBox alignment="CENTER" spacing="5">
+                        <Text text="GearRent Pro" 
+                              style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-fill: #1e3c72;" />
+                        <Text text="Equipment Rental Management System" 
+                              style="-fx-font-size: 14px; -fx-fill: #666;" />
+                    </VBox>
+                </VBox>
+                
+                <!-- Login Form -->
+                <VBox spacing="20" style="-fx-min-width: 350;">
+                    <!-- Username Field -->
+                    <VBox spacing="5">
+                        <Label text="Username" 
+                               style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+                        <TextField fx:id="txtUsername" 
+                                 promptText="Enter your username"
+                                 style="-fx-pref-height: 45; -fx-background-radius: 10; -fx-border-radius: 10; 
+                                        -fx-border-color: #ddd; -fx-border-width: 2; -fx-padding: 10 15;" />
+                    </VBox>
+                    
+                    <!-- Password Field -->
+                    <VBox spacing="5">
+                        <Label text="Password" 
+                               style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+                        <PasswordField fx:id="txtPassword" 
+                                     promptText="Enter your password"
+                                     style="-fx-pref-height: 45; -fx-background-radius: 10; -fx-border-radius: 10; 
+                                            -fx-border-color: #ddd; -fx-border-width: 2; -fx-padding: 10 15;" />
+                    </VBox>
+                    
+                    <!-- Remember Me & Forgot Password -->
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <CheckBox fx:id="chkRemember" text="Remember me" 
+                                  style="-fx-text-fill: #666;" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button text="Forgot Password?" 
+                                style="-fx-background-color: transparent; -fx-text-fill: #1e3c72; -fx-underline: true;"
+                                onAction="#onForgotPasswordClicked" />
+                    </HBox>
+                    
+                    <!-- Error Message -->
+                    <Label fx:id="lblError" 
+                           style="-fx-text-fill: #e74c3c; -fx-font-size: 12px;"
+                           visible="false" />
+                    
+                    <!-- Login Button -->
+                    <Button text="LOGIN" 
+                            style="-fx-background-color: #1e3c72; -fx-text-fill: white; -fx-font-size: 16px; 
+                                   -fx-font-weight: bold; -fx-background-radius: 10; -fx-pref-height: 50;"
+                            onAction="#onLoginClicked">
+                        <graphic>
+                            <ImageView>
+                                <Image url="@/icons/login.png" />
+                                <ImageView.fitWidth>20</ImageView.fitWidth>
+                                <ImageView.fitHeight>20</ImageView.fitHeight>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    
+                    <!-- Alternative Login -->
+                    <HBox alignment="CENTER" spacing="10">
+                        <Text text="Or login with:" style="-fx-fill: #666;" />
+                        <Button style="-fx-background-color: #3b5998; -fx-background-radius: 50; -fx-min-width: 40; -fx-min-height: 40;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@/icons/facebook.png" />
+                                    <ImageView.fitWidth>20</ImageView.fitWidth>
+                                    <ImageView.fitHeight>20</ImageView.fitHeight>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button style="-fx-background-color: #db4437; -fx-background-radius: 50; -fx-min-width: 40; -fx-min-height: 40;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@/icons/google.png" />
+                                    <ImageView.fitWidth>20</ImageView.fitWidth>
+                                    <ImageView.fitHeight>20</ImageView.fitHeight>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </HBox>
+                    
+                    <!-- Demo Credentials -->
+                    <VBox alignment="CENTER" spacing="5" style="-fx-background-color: #f8f9fa; -fx-background-radius: 10; -fx-padding: 15;">
+                        <Text text="Demo Credentials" style="-fx-font-weight: bold; -fx-fill: #666;" />
+                        <Text text="Admin: admin / admin123" style="-fx-font-size: 12px; -fx-fill: #666;" />
+                        <Text text="Staff: staff / staff123" style="-fx-font-size: 12px; -fx-fill: #666;" />
+                    </VBox>
+                </VBox>
+                
+                <!-- Footer -->
+                <VBox alignment="CENTER" spacing="5">
+                    <Text text="© 2024 GearRent Pro. All rights reserved." 
+                          style="-fx-font-size: 12px; -fx-fill: #999;" />
+                    <HBox spacing="10" alignment="CENTER">
+                        <Hyperlink text="Privacy Policy" style="-fx-text-fill: #1e3c72;" />
+                        <Text text="|" style="-fx-fill: #ccc;" />
+                        <Hyperlink text="Terms of Service" style="-fx-text-fill: #1e3c72;" />
+                        <Text text="|" style="-fx-fill: #ccc;" />
+                        <Hyperlink text="Contact Support" style="-fx-text-fill: #1e3c72;" />
+                    </HBox>
+                </VBox>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>

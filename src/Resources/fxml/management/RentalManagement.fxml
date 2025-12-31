@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.gearrentpro.controller.management.RentalManagementController"
+      spacing="20" style="-fx-padding: 20;">
+    
+    <HBox spacing="15" alignment="CENTER_LEFT">
+        <Text text="Rental Management" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button text="New Rental" onAction="#onNewRentalClicked" 
+                style="-fx-background-color: #1e3c72; -fx-text-fill: white;" />
+    </HBox>
+    
+    <HBox spacing="10">
+        <TextField fx:id="txtSearch" promptText="Search rentals..." HBox.hgrow="ALWAYS" />
+        <ChoiceBox fx:id="cmbStatus" />
+        <Button text="Search" onAction="#onSearchClicked" />
+    </HBox>
+    
+    <TableView fx:id="tblRentals" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="Rental ID" />
+            <TableColumn text="Customer" />
+            <TableColumn text="Equipment" />
+            <TableColumn text="Start Date" />
+            <TableColumn text="End Date" />
+            <TableColumn text="Status" />
+            <TableColumn text="Actions" />
+        </columns>
+    </TableView>
+</VBox>

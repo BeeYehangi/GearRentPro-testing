@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.gearrentpro.controller.reports.ReportsDashboardController"
+      spacing="20" style="-fx-padding: 20;">
+    
+    <Text text="Reports Dashboard" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+    
+    <GridPane hgap="20" vgap="20">
+        <Button text="Daily Report" onAction="#onDailyClicked" 
+                style="-fx-pref-width: 200; -fx-pref-height: 100; -fx-font-size: 16px;" />
+        <Button text="Monthly Report" onAction="#onMonthlyClicked" 
+                style="-fx-pref-width: 200; -fx-pref-height: 100; -fx-font-size: 16px;" GridPane.columnIndex="1" />
+        <Button text="Rental Summary" onAction="#onRentalSummaryClicked" 
+                style="-fx-pref-width: 200; -fx-pref-height: 100; -fx-font-size: 16px;" GridPane.rowIndex="1" />
+        <Button text="Revenue Report" onAction="#onRevenueClicked" 
+                style="-fx-pref-width: 200; -fx-pref-height: 100; -fx-font-size: 16px;" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+    </GridPane>
+</VBox>

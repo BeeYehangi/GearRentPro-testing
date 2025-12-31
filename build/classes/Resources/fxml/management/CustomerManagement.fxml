@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.gearrentpro.controller.management.CustomerManagementController"
+      spacing="20" style="-fx-padding: 20;">
+    
+    <HBox spacing="15" alignment="CENTER_LEFT">
+        <Text text="Customer Management" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button text="Add Customer" onAction="#onAddCustomerClicked" 
+                style="-fx-background-color: #1e3c72; -fx-text-fill: white;" />
+    </HBox>
+    
+    <HBox spacing="10">
+        <TextField fx:id="txtSearch" promptText="Search customers..." HBox.hgrow="ALWAYS" />
+        <Button text="Search" onAction="#onSearchClicked" />
+    </HBox>
+    
+    <TableView fx:id="tblCustomers" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="ID" />
+            <TableColumn text="Name" />
+            <TableColumn text="Email" />
+            <TableColumn text="Phone" />
+            <TableColumn text="Membership" />
+            <TableColumn text="Actions" />
+        </columns>
+    </TableView>
+</VBox>

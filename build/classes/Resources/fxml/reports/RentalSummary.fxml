@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.gearrentpro.controller.reports.RentalSummaryController"
+      spacing="20" style="-fx-padding: 20;">
+    
+    <Text text="Rental Summary Report" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+    
+    <HBox spacing="10">
+        <DatePicker fx:id="dpFrom" promptText="From Date" />
+        <DatePicker fx:id="dpTo" promptText="To Date" />
+        <Button text="Generate" onAction="#onGenerateClicked" />
+        <Button text="Export" onAction="#onExportClicked" />
+    </HBox>
+    
+    <TableView fx:id="tblSummary" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="Date" />
+            <TableColumn text="Rentals" />
+            <TableColumn text="Revenue" />
+            <TableColumn text="Avg. Duration" />
+        </columns>
+    </TableView>
+</VBox>

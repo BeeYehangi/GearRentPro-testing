@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.gearrentpro.controller.transactions.ReturnEquipmentController"
+      spacing="20" style="-fx-padding: 20;">
+    
+    <Text text="Return Equipment" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+    
+    <HBox spacing="10">
+        <TextField fx:id="txtRentalId" promptText="Enter Rental ID" HBox.hgrow="ALWAYS" />
+        <Button text="Find" onAction="#onFindClicked" />
+    </HBox>
+    
+    <GridPane hgap="15" vgap="15" visible="false" fx:id="gridDetails">
+        <Label text="Customer:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label fx:id="lblCustomer" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        
+        <Label text="Equipment:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label fx:id="lblEquipment" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        
+        <Label text="Late Fee:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="txtLateFee" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        
+        <Label text="Damage Fee:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="txtDamageFee" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    </GridPane>
+    
+    <Label fx:id="lblTotal" style="-fx-font-size: 18px; -fx-font-weight: bold;" visible="false" />
+    
+    <HBox spacing="10">
+        <Button text="Process Return" onAction="#onProcessClicked" 
+                style="-fx-background-color: #1e3c72; -fx-text-fill: white;" />
+        <Button text="Cancel" onAction="#onCancelClicked" />
+    </HBox>
+</VBox>

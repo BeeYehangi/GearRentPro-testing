@@ -1,0 +1,200 @@
+/* Main CSS file for GearRent Pro */
+
+/* ===== ROOT VARIABLES ===== */
+.root {
+    -fx-primary: #1e3c72;
+    -fx-primary-light: #2a5298;
+    -fx-success: #27ae60;
+    -fx-warning: #f39c12;
+    -fx-danger: #e74c3c;
+    -fx-dark: #2c3e50;
+    -fx-gray: #7f8c8d;
+    -fx-white: #ffffff;
+    -fx-bg-light: #f5f7fa;
+    -fx-border-color: #e1e5eb;
+}
+
+/* ===== BASE STYLES ===== */
+* {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== BUTTONS ===== */
+.button {
+    -fx-background-color: -fx-white;
+    -fx-border-color: -fx-border-color;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.button:hover {
+    -fx-background-color: #f8f9fa;
+}
+
+.button-primary {
+    -fx-background-color: -fx-primary;
+    -fx-text-fill: -fx-white;
+    -fx-border-color: -fx-primary;
+}
+
+.button-primary:hover {
+    -fx-background-color: -fx-primary-light;
+}
+
+.button-success {
+    -fx-background-color: -fx-success;
+    -fx-text-fill: -fx-white;
+}
+
+.button-danger {
+    -fx-background-color: -fx-danger;
+    -fx-text-fill: -fx-white;
+}
+
+/* ===== TEXT FIELDS ===== */
+.text-field, .password-field, .text-area, .combo-box {
+    -fx-background-color: -fx-white;
+    -fx-border-color: -fx-border-color;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 10;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: -fx-primary;
+}
+
+/* ===== TABLES ===== */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: -fx-border-color;
+}
+
+.table-view .column-header {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: -fx-border-color;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell {
+    -fx-border-color: transparent;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #fafbfc;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #e8f0fe;
+}
+
+/* ===== CARDS ===== */
+.card {
+    -fx-background-color: -fx-white;
+    -fx-background-radius: 10;
+    -fx-border-color: -fx-border-color;
+    -fx-border-radius: 10;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+}
+
+/* ===== STATS CARDS ===== */
+.stats-card {
+    -fx-background-radius: 10;
+    -fx-padding: 20;
+    -fx-min-width: 200;
+}
+
+.stats-card-primary {
+    -fx-background-color: #e8f0fe;
+}
+
+.stats-card-success {
+    -fx-background-color: #e8f7f0;
+}
+
+.stats-card-warning {
+    -fx-background-color: #fef5e7;
+}
+
+.stats-card-danger {
+    -fx-background-color: #ffeaea;
+}
+
+/* ===== BADGES ===== */
+.badge {
+    -fx-background-radius: 10;
+    -fx-padding: 5 10;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+}
+
+.badge-success {
+    -fx-background-color: -fx-success;
+    -fx-text-fill: -fx-white;
+}
+
+.badge-warning {
+    -fx-background-color: -fx-warning;
+    -fx-text-fill: -fx-white;
+}
+
+.badge-danger {
+    -fx-background-color: -fx-danger;
+    -fx-text-fill: -fx-white;
+}
+
+/* ===== NAVIGATION ===== */
+.sidebar {
+    -fx-background-color: -fx-white;
+    -fx-border-color: -fx-border-color;
+    -fx-border-width: 0 1 0 0;
+}
+
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: -fx-dark;
+    -fx-padding: 15 25;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-weight: bold;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #f8f9fa;
+}
+
+.sidebar-button-active {
+    -fx-background-color: -fx-primary;
+    -fx-text-fill: -fx-white;
+}
+
+/* ===== HEADER ===== */
+.header {
+    -fx-background-color: -fx-white;
+    -fx-border-color: -fx-border-color;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 15;
+}
+
+/* ===== ALERTS ===== */
+.alert-error {
+    -fx-background-color: #ffeaea;
+    -fx-border-color: -fx-danger;
+    -fx-text-fill: -fx-danger;
+    -fx-padding: 10;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+.alert-success {
+    -fx-background-color: #e8f7f0;
+    -fx-border-color: -fx-success;
+    -fx-text-fill: -fx-success;
+    -fx-padding: 10;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}

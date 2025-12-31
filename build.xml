@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="GearRentPro" default="default" basedir=".">
+    <description>GearRent Pro Equipment Rental System</description>
+    
+    <!-- Set global properties -->
+    <property name="src" location="src"/>
+    <property name="build" location="build"/>
+    <property name="dist" location="dist"/>
+    <property name="lib" location="lib"/>
+    <property name="resources" location="resources"/>
+    <property name="main-class" value="com.gearrent.Main"/>
+    
+    <!-- Classpath definition -->
+    <path id="classpath">
+        <fileset dir="${lib}">
+            <include name="**/*.jar"/>
+        </fileset>
+        <pathelement path="${build}"/>
+    </path>
+    
+    <!-- Clean build directory -->
+    <target name="clean">
+        <echo>Cleaning build directory...</echo>
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+    </target>
+    
+    <!-- Initialize build directory -->
+    <target name="init" depends="clean">
+        <echo>Creating build directories...</echo>
+        <mkdir dir="${build}"/>
+        <mkdir dir="${dist}"/>
+    </target>
+    
+    <!-- Compile Java sources -->
+    <target name="compile" depends="init" description="compile the source">
+        <echo>Compiling Java sources...</echo>
+        <javac srcdir="${src}" destdir="${build}" includeantruntime="false" debug="true">
+            <classpath refid="classpath"/>
+        </javac>
+        
+        <!-- Copy resources -->
+        <echo>Copying resources...</echo>
+        <copy todir="${build}">
+            <fileset dir="${resources}"/>
+        </copy>
+    </target>
+    
+    <!-- Create JAR file -->
+    <target name="jar" depends="compile" description="generate the distribution">
+        <echo>Creating JAR file...</echo>
+        <mkdir dir="${dist}/lib"/>
+        
+        <!-- Copy library JARs -->
+        <copy todir="${dist}/lib" flatten="true">
+            <fileset dir="${lib}">
+                <include name="**/*.jar"/>
+            </fileset>
+        </copy>
+        
+        <!-- Get list of JARs for manifest classpath -->
+        <pathconvert property="lib.jars" pathsep=" ">
+            <path refid="classpath"/>
+            <chainedmapper>
+                <flattenmapper/>
+                <globmapper from="*.jar" to="lib/*.jar"/>
+            </chainedmapper>
+        </pathconvert>
+        
+        <jar jarfile="${dist}/GearRentPro.jar" basedir="${build}">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+                <attribute name="Class-Path" value="${lib.jars} ."/>
+                <attribute name="Built-By" value="GearRentPro"/>
+            </manifest>
+        </jar>
+        <echo>JAR created at ${dist}/GearRentPro.jar</echo>
+    </target>
+    
+    <!-- Run the application -->
+    <target name="run" depends="jar" description="run the application">
+        <echo>Running application...</echo>
+        <java classname="${main-class}" fork="true">
+            <classpath>
+                <pathelement location="${dist}/GearRentPro.jar"/>
+                <path refid="classpath"/>
+            </classpath>
+        </java>
+    </target>
+    
+    <!-- Clean and build -->
+    <target name="rebuild" depends="clean,jar" description="clean and build"/>
+    
+    <!-- Default target -->
+    <target name="default" depends="jar"/>
+    
+    <!-- Run tests -->
+    <target name="test" depends="compile">
+        <echo>Running tests...</echo>
+        <!-- Add your test execution here -->
+    </target>
+</project>

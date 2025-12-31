@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.gearrentpro.controller.dashboard.ManagerDashboardController">
+    
+    <top>
+        <HBox style="-fx-background-color: white; -fx-padding: 15; -fx-border-color: #e1e5eb; -fx-border-width: 0 0 1 0;">
+            <Text text="GearRent Pro - Manager Dashboard" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="Logout" />
+        </HBox>
+    </top>
+    
+    <left>
+        <VBox style="-fx-background-color: white; -fx-border-color: #e1e5eb; -fx-border-width: 0 1 0 0; -fx-min-width: 200;">
+            <Button text="Dashboard" style="-fx-text-fill: #1e3c72; -fx-font-weight: bold;" />
+            <Button text="Equipment" />
+            <Button text="Customers" />
+            <Button text="Rentals" />
+            <Button text="Returns" />
+            <Button text="Reports" />
+        </VBox>
+    </left>
+    
+    <center>
+        <Label text="Welcome to Manager Dashboard" style="-fx-font-size: 24px;" />
+    </center>
+</BorderPane>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.gearrentpro.controller.transactions.PaymentProcessingController"
+      spacing="20" style="-fx-padding: 20;">
+    
+    <Text text="Payment Processing" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+    
+    <HBox spacing="10">
+        <TextField fx:id="txtRentalId" promptText="Enter Rental ID" HBox.hgrow="ALWAYS" />
+        <Button text="Find" onAction="#onFindClicked" />
+    </HBox>
+    
+    <GridPane hgap="15" vgap="15" visible="false" fx:id="gridPayment">
+        <Label text="Amount Due:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label fx:id="lblAmountDue" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        
+        <Label text="Payment Amount:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="txtAmount" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        
+        <Label text="Payment Method:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <ChoiceBox fx:id="cmbMethod" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    </GridPane>
+    
+    <HBox spacing="10">
+        <Button text="Process Payment" onAction="#onProcessClicked" 
+                style="-fx-background-color: #1e3c72; -fx-text-fill: white;" />
+        <Button text="Cancel" onAction="#onCancelClicked" />
+    </HBox>
+</VBox>

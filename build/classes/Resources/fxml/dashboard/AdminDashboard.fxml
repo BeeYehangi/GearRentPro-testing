@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.gearrentpro.controller.dashboard.AdminDashboardController"
+            style="-fx-background-color: #f5f7fa;">
+    
+    <!-- Top Header -->
+    <top>
+        <HBox style="-fx-background-color: white; -fx-padding: 15 30; -fx-border-color: #e1e5eb; -fx-border-width: 0 0 1 0;">
+            <!-- Logo -->
+            <HBox alignment="CENTER_LEFT" spacing="15" HBox.hgrow="ALWAYS">
+                <ImageView>
+                    <Image url="@/images/logo-small.png" />
+                    <ImageView.fitWidth>40</ImageView.fitWidth>
+                    <ImageView.fitHeight>40</ImageView.fitHeight>
+                </ImageView>
+                <VBox spacing="2">
+                    <Text text="GearRent Pro" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-fill: #1e3c72;" />
+                    <Text text="Admin Dashboard" style="-fx-font-size: 12px; -fx-fill: #666;" />
+                </VBox>
+            </HBox>
+            
+            <!-- Search Bar -->
+            <HBox alignment="CENTER" spacing="10" style="-fx-min-width: 300;">
+                <TextField promptText="Search..." 
+                         style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-pref-height: 40;" />
+                <Button style="-fx-background-color: #1e3c72; -fx-background-radius: 50; -fx-min-width: 40; -fx-min-height: 40;">
+                    <graphic>
+                        <ImageView>
+                            <Image url="@/icons/search.png" />
+                            <ImageView.fitWidth>20</ImageView.fitWidth>
+                            <ImageView.fitHeight>20</ImageView.fitHeight>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+            
+            <!-- User Info & Notifications -->
+            <HBox alignment="CENTER" spacing="20">
+                <!-- Notifications -->
+                <Button style="-fx-background-color: transparent;">
+                    <graphic>
+                        <StackPane>
+                            <ImageView>
+                                <Image url="@/icons/bell.png" />
+                                <ImageView.fitWidth>24</ImageView.fitWidth>
+                                <ImageView.fitHeight>24</ImageView.fitHeight>
+                            </ImageView>
+                            <Circle radius="5" fill="#e74c3c" translateX="8" translateY="-8" />
+                        </StackPane>
+                    </graphic>
+                </Button>
+                
+                <!-- User Profile -->
+                <HBox alignment="CENTER" spacing="10">
+                    <VBox alignment="CENTER_RIGHT" spacing="2">
+                        <Text text="John Doe" style="-fx-font-weight: bold; -fx-fill: #333;" />
+                        <Text text="Administrator" style="-fx-font-size: 12px; -fx-fill: #666;" />
+                    </VBox>
+                    <ImageView style="-fx-cursor: hand;">
+                        <Image url="@/images/user-avatar.png" />
+                        <ImageView.fitWidth>45</ImageView.fitWidth>
+                        <ImageView.fitHeight>45</ImageView.fitHeight>
+                        <ImageView.clip>
+                            <Circle centerX="22.5" centerY="22.5" radius="22.5" />
+                        </ImageView.clip>
+                    </ImageView>
+                </HBox>
+            </HBox>
+        </HBox>
+    </top>
+    
+    <!-- Main Content -->
+    <center>
+        <SplitPane dividerPositions="0.2">
+            <!-- Sidebar -->
+            <VBox style="-fx-background-color: white; -fx-border-color: #e1e5eb; -fx-border-width: 0 1 0 0;">
+                <VBox spacing="0" style="-fx-padding: 20 0;">
+                    <!-- Navigation Items -->
+                    <VBox spacing="5">
+                        <Button text="Dashboard" 
+                                style="-fx-background-color: #e8f0fe; -fx-text-fill: #1e3c72; -fx-font-weight: bold;
+                                       -fx-alignment: CENTER_LEFT; -fx-padding: 15 25; -fx-border-width: 0;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@/icons/dashboard.png" />
+                                    <ImageView.fitWidth>20</ImageView.fitWidth>
+                                    <ImageView.fitHeight>20</ImageView.fitHeight>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        
+                        <Button text="Quick Rental" 
+                                style="-fx-background-color: transparent; -fx-text-fill: #333;
+                                       -fx-alignment: CENTER_LEFT; -fx-padding: 15 25;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@/icons/rental.png" />
+                                    <ImageView.fitWidth>20</ImageView.fitWidth>
+                                    <ImageView.fitHeight>20</ImageView.fitHeight>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        
+                        <Button text="Equipment" 
+                                style="-fx-background-color: transparent; -fx-text-fill: #333;
+                                       -fx-alignment: CENTER_LEFT; -fx-padding: 15 25;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@/icons/equipment.png" />
+                                    <ImageView.fitWidth>20</ImageView.fitWidth>
+                                    <ImageView.fitHeight>20</ImageView.fitHeight>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        
+                        <Button text="Customers" 
+                                style="-fx-background-color: transparent; -fx-text-fill: #333;
+                                       -fx-alignment: CENTER_LEFT; -fx-padding: 15 25;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@/icons/customers.png" />
+                                    <ImageView.fitWidth>20</ImageView.fitWidth>
+                                    <ImageView.fitHeight>20</ImageView.fitHeight>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        
+                        <Button text="Reservations" 
+                                style="-fx-background-color: transparent; -fx-text-fill: #333;
+                                       -fx-alignment: CENTER_LEFT; -fx-padding: 15 25;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@/icons/reservations.png" />
+                                    <ImageView.fitWidth>20</ImageView.fitWidth>
+                                    <ImageView.fitHeight>20</ImageView.fitHeight>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        
+                        <Button text="Rentals" 
+                                style="-fx-background-color: transparent; -fx-text-fill: #333;
+                                       -fx-alignment: CENTER_LEFT; -fx-padding: 15 25;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@/icons/rentals.png" />
+                                    <ImageView.fitWidth>20</ImageView.fitWidth>
+                                    <ImageView.fitHeight>20</ImageView.fitHeight>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        
+                        <Button text="Returns" 
+                                style="-fx-background-color: transparent; -fx-text-fill: #333;
+                                       -fx-alignment: CENTER_LEFT; -fx-padding: 15 25;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@/icons/returns.png" />
+                                    <ImageView.fitWidth>20</ImageView.fitWidth>
+                                    <ImageView.fitHeight>20</ImageView.fitHeight>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        
+                        <Button text="Payments" 
+                                style="-fx-background-color: transparent; -fx-text-fill: #333;
+                                       -fx-alignment: CENTER_LEFT; -fx-padding: 15 25;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@/icons/payments.png" />
+                                    <ImageView.fitWidth>20</ImageView.fitWidth>
+                                    <ImageView.fitHeight>20</ImageView.fitHeight>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        
+                        <Button text="Reports" 
+                                style="-fx-background-color: transparent; -fx-text-fill: #333;
+                                       -fx-alignment: CENTER_LEFT; -fx-padding: 15 25;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@/icons/reports.png" />
+                                    <ImageView.fitWidth>20</ImageView.fitWidth>
+                                    <ImageView.fitHeight>20</ImageView.fitHeight>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </VBox>
+                    
+                    <!-- Divider -->
+                    <Separator style="-fx-padding: 20 0;" />
+                    
+                    <!-- System -->
+                    <VBox spacing="5">
+                        <Button text="Users" 
+                                style="-fx-background-color: transparent; -fx-text-fill: #333;
+                                       -fx-alignment: CENTER_LEFT; -fx-padding: 15 25;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@/icons/users.png" />
+                                    <ImageView.fitWidth>20</ImageView.fitWidth>
+                                    <ImageView.fitHeight>20</ImageView.fitHeight>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        
+                        <Button text="Branches" 
+                                style="-fx-background-color: transparent; -fx-text-fill: #333;
+                                       -fx-alignment: CENTER_LEFT; -fx-padding: 15 25;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@/icons/branches.png" />
+                                    <ImageView.fitWidth>20</ImageView.fitWidth>
+                                    <ImageView.fitHeight>20</ImageView.fitHeight>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        
+                        <Button text="Settings" 
+                                style="-fx-background-color: transparent; -fx-text-fill: #333;
+                                       -fx-alignment: CENTER_LEFT; -fx-padding: 15 25;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@/icons/settings.png" />
+                                    <ImageView.fitWidth>20</ImageView.fitWidth>
+                                    <ImageView.fitHeight>20</ImageView.fitHeight>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </VBox>
+                    
+                    <Region VBox.vgrow="ALWAYS" />
+                    
+                    <!-- Logout -->
+                    <Button text="Logout" 
+                            style="-fx-background-color: #ffeaea; -fx-text-fill: #e74c3c; -fx-font-weight: bold;
+                                   -fx-alignment: CENTER_LEFT; -fx-padding: 15 25; -fx-margin: 20 0 0 0;">
+                        <graphic>
+                            <ImageView>
+                                <Image url="@/icons/logout.png" />
+                                <ImageView.fitWidth>20</ImageView.fitWidth>
+                                <ImageView.fitHeight>20</ImageView.fitHeight>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </VBox>
+            </VBox>
+            
+            <!-- Dashboard Content -->
+            <ScrollPane fitToWidth="true" style="-fx-background: transparent; -fx-border-color: transparent;">
+                <VBox spacing="20" style="-fx-padding: 20;">
+                    <!-- Welcome Section -->
+                    <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25;">
+                        <HBox spacing="15" alignment="CENTER_LEFT">
+                            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                <Text text="Welcome back, John!" 
+                                      style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #333;" />
+                                <Text text="Here's what's happening with your rental business today." 
+                                      style="-fx-font-size: 14px; -fx-fill: #666;" />
+                            </VBox>
+                            <Button text="Quick Rental" 
+                                    style="-fx-background-color: #1e3c72; -fx-text-fill: white; -fx-font-weight: bold;
+                                           -fx-background-radius: 10; -fx-padding: 12 25;">
+                                <graphic>
+                                    <ImageView>
+                                        <Image url="@/icons/add.png" />
+                                        <ImageView.fitWidth>20</ImageView.fitWidth>
+                                        <ImageView.fitHeight>20</ImageView.fitHeight>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                        </HBox>
+                    </VBox>
+                    
+                    <!-- Stats Cards -->
+                    <GridPane hgap="20" vgap="20">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="25" />
+                            <ColumnConstraints percentWidth="25" />
+                            <ColumnConstraints percentWidth="25" />
+                            <ColumnConstraints percentWidth="25" />
+                        </columnConstraints>
+                        
+                        <!-- Active Rentals Card -->
+                        <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25;" 
+                              GridPane.columnIndex="0">
+                            <HBox spacing="15" alignment="CENTER_LEFT">
+                                <StackPane style="-fx-background-color: #e8f0fe; -fx-background-radius: 10; -fx-padding: 15;">
+                                    <ImageView>
+                                        <Image url="@/icons/rental-active.png" />
+                                        <ImageView.fitWidth>30</ImageView.fitWidth>
+                                        <ImageView.fitHeight>30</ImageView.fitHeight>
+                                    </ImageView>
+                                </StackPane>
+                                <VBox spacing="2">
+                                    <Text text="Active Rentals" style="-fx-font-size: 14px; -fx-fill: #666;" />
+                                    <Text text="24" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-fill: #333;" />
+                                </VBox>
+                            </HBox>
+                            <HBox spacing="5" style="-fx-padding: 10 0 0 0;">
+                                <Text text="+2 from yesterday" style="-fx-font-size: 12px; -fx-fill: #27ae60;" />
+                            </HBox>
+                        </VBox>
+                        
+                        <!-- Today's Revenue Card -->
+                        <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25;" 
+                              GridPane.columnIndex="1">
+                            <HBox spacing="15" alignment="CENTER_LEFT">
+                                <StackPane style="-fx-background-color: #e8f7f0; -fx-background-radius: 10; -fx-padding: 15;">
+                                    <ImageView>
+                                        <Image url="@/icons/revenue.png" />
+                                        <ImageView.fitWidth>30</ImageView.fitWidth>
+                                        <ImageView.fitHeight>30</ImageView.fitHeight>
+                                    </ImageView>
+                                </StackPane>
+                                <VBox spacing="2">
+                                    <Text text="Today's Revenue" style="-fx-font-size: 14px; -fx-fill: #666;" />
+                                    <Text text="$1,250" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-fill: #333;" />
+                                </VBox>
+                            </HBox>
+                            <HBox spacing="5" style="-fx-padding: 10 0 0 0;">
+                                <Text text="+15% from last week" style="-fx-font-size: 12px; -fx-fill: #27ae60;" />
+                            </HBox>
+                        </VBox>
+                        
+                        <!-- Overdue Rentals Card -->
+                        <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25;" 
+                              GridPane.columnIndex="2">
+                            <HBox spacing="15" alignment="CENTER_LEFT">
+                                <StackPane style="-fx-background-color: #ffeaea; -fx-background-radius: 10; -fx-padding: 15;">
+                                    <ImageView>
+                                        <Image url="@/icons/overdue.png" />
+                                        <ImageView.fitWidth>30</ImageView.fitWidth>
+                                        <ImageView.fitHeight>30</ImageView.fitHeight>
+                                    </ImageView>
+                                </StackPane>
+                                <VBox spacing="2">
+                                    <Text text="Overdue Rentals" style="-fx-font-size: 14px; -fx-fill: #666;" />
+                                    <Text text="5" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-fill: #e74c3c;" />
+                                </VBox>
+                            </HBox>
+                            <HBox spacing="5" style="-fx-padding: 10 0 0 0;">
+                                <Text text="Requires attention" style="-fx-font-size: 12px; -fx-fill: #e74c3c;" />
+                            </HBox>
+                        </VBox>
+                        
+                        <!-- Available Equipment Card -->
+                        <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25;" 
+                              GridPane.columnIndex="3">
+                            <HBox spacing="15" alignment="CENTER_LEFT">
+                                <StackPane style="-fx-background-color: #f0f7ff; -fx-background-radius: 10; -fx-padding: 15;">
+                                    <ImageView>
+                                        <Image url="@/icons/available.png" />
+                                        <ImageView.fitWidth>30</ImageView.fitWidth>
+                                        <ImageView.fitHeight>30</ImageView.fitHeight>
+                                    </ImageView>
+                                </StackPane>
+                                <VBox spacing="2">
+                                    <Text text="Available Equipment" style="-fx-font-size: 14px; -fx-fill: #666;" />
+                                    <Text text="42" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-fill: #333;" />
+                                </VBox>
+                            </HBox>
+                            <HBox spacing="5" style="-fx-padding: 10 0 0 0;">
+                                <Text text="85% availability rate" style="-fx-font-size: 12px; -fx-fill: #666;" />
+                            </HBox>
+                        </VBox>
+                    </GridPane>
+                    
+                    <!-- Charts Section -->
+                    <HBox spacing="20">
+                        <!-- Revenue Chart -->
+                        <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25;" 
+                              HBox.hgrow="ALWAYS">
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Text text="Revenue Trend" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-fill: #333;" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <ChoiceBox value="Last 7 Days" />
+                            </HBox>
+                            <LineChart fx:id="revenueChart" 
+                                     style="-fx-padding: 20 0 0 0; -fx-legend-visible: false;">
+                                <xAxis>
+                                    <CategoryAxis />
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis />
+                                </yAxis>
+                            </LineChart>
+                        </VBox>
+                        
+                        <!-- Equipment Categories -->
+                        <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25;" 
+                              HBox.hgrow="ALWAYS">
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Text text="Equipment by Category" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-fill: #333;" />
+                                <Region HBox.hgrow="ALWAYS" />
+                            </HBox>
+                            <PieChart fx:id="categoryChart" 
+                                    style="-fx-padding: 20 0 0 0;" />
+                        </VBox>
+                    </HBox>
+                    
+                    <!-- Recent Activity -->
+                    <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25;">
+                        <HBox alignment="CENTER_LEFT" spacing="10">
+                            <Text text="Recent Activity" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-fill: #333;" />
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Button text="View All" style="-fx-background-color: transparent; -fx-text-fill: #1e3c72;" />
+                        </HBox>
+                        
+                        <TableView fx:id="tblRecentActivity" 
+                                 style="-fx-padding: 20 0 0 0; -fx-background-color: transparent;">
+                            <columns>
+                                <TableColumn text="Time" />
+                                <TableColumn text="Activity" />
+                                <TableColumn text="Customer" />
+                                <TableColumn text="Equipment" />
+                                <TableColumn text="Status" />
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </VBox>
+            </ScrollPane>
+        </SplitPane>
+    </center>
+    
+    <!-- Bottom Status Bar -->
+    <bottom>
+        <HBox style="-fx-background-color: white; -fx-padding: 10 30; -fx-border-color: #e1e5eb; -fx-border-width: 1 0 0 0;">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Text text="🟢 System Status: Online" style="-fx-font-size: 12px; -fx-fill: #27ae60;" />
+                <Text text="|" style="-fx-fill: #ddd;" />
+                <Text text="Last sync: 2 minutes ago" style="-fx-font-size: 12px; -fx-fill: #666;" />
+                <Text text="|" style="-fx-fill: #ddd;" />
+                <Text text="Database: Connected" style="-fx-font-size: 12px; -fx-fill: #666;" />
+            </HBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Text text="GearRent Pro v1.0.0" style="-fx-font-size: 12px; -fx-fill: #666;" />
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,36 @@
+/* Login page specific styles */
+.login-container {
+    -fx-background-color: linear-gradient(to bottom right, #1e3c72, #2a5298);
+}
+
+.login-card {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 20, 0, 0, 5);
+    -fx-padding: 40;
+    -fx-min-width: 400;
+}
+
+.login-title {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-fill: #1e3c72;
+}
+
+.login-subtitle {
+    -fx-font-size: 14px;
+    -fx-fill: #666;
+}
+
+.login-button {
+    -fx-background-color: #1e3c72;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-pref-height: 50;
+}
+
+.login-button:hover {
+    -fx-background-color: #2a5298;
+}
