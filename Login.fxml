@@ -6,7 +6,7 @@
 <?import javafx.scene.image.*?>
 
 <BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="com.gearrentpro.controller.auth.LoginController"
+            fx:controller="com.GearRentPro.controller.auth.LoginController"
             style="-fx-background-color: linear-gradient(to bottom right, #1e3c72, #2a5298);">
     
     <center>
