@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      style="-fx-background-color: white; -fx-padding: 15; -fx-border-color: #e1e5eb; -fx-border-width: 0 0 1 0;">
+    
+    <Text text="GearRent Pro" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+    <Region HBox.hgrow="ALWAYS" />
+    <Label text="Welcome, Admin" />
+</HBox>

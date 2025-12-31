@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      spacing="20" style="-fx-padding: 20;">
+    
+    <VBox style="-fx-background-color: #e8f0fe; -fx-padding: 15; -fx-background-radius: 10;">
+        <Text text="Active Rentals" style="-fx-font-size: 14px; -fx-fill: #666;" />
+        <Text text="24" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-fill: #333;" />
+    </VBox>
+    
+    <VBox style="-fx-background-color: #e8f7f0; -fx-padding: 15; -fx-background-radius: 10;">
+        <Text text="Today's Revenue" style="-fx-font-size: 14px; -fx-fill: #666;" />
+        <Text text="$1,250" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-fill: #333;" />
+    </VBox>
+    
+    <VBox style="-fx-background-color: #ffeaea; -fx-padding: 15; -fx-background-radius: 10;">
+        <Text text="Overdue" style="-fx-font-size: 14px; -fx-fill: #666;" />
+        <Text text="5" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-fill: #e74c3c;" />
+    </VBox>
+    
+    <VBox style="-fx-background-color: #f0f7ff; -fx-padding: 15; -fx-background-radius: 10;">
+        <Text text="Available" style="-fx-font-size: 14px; -fx-fill: #666;" />
+        <Text text="42" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-fill: #333;" />
+    </VBox>
+</HBox>
